@@ -1,212 +1,704 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Elevate your business with our AI-driven analytics platform. Scale faster, smarter, and more efficiently.">
-    <title>Elevate - Scale Your Business Intelligence</title>
-    <!-- Google Fonts -->
+    <title>Peace Farm | Institutional Land Investment - Kodangal</title>
+    <meta name="description"
+        content="Institutional-grade land investment in Kodangal. Capital preservation and long-term appreciation asset. Peace Farm by Emaam Constructions.">
+
+    <!-- Typography: Inter for executive clarity -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons (Minimal) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- INSTITUTIONAL INVESTMENT DESIGN SYSTEM --- */
+        :root {
+            /* Authority Palette */
+            --inst-navy: #0B1F33;
+            /* Private Banking Navy */
+            --inst-green: #0F3D2E;
+            /* Forest Green - Stability */
+            --inst-gold: #C9A24D;
+            /* Muted Gold - Value */
+            --inst-steel: #2E3440;
+            /* Steel Gray - Structure */
+            --inst-bg: #F4F6F8;
+            /* Light Grey/Blue - Crisp */
+            --inst-white: #FFFFFF;
+
+            /* Text Levels */
+            --text-pri: #111827;
+            --text-sec: #4B5563;
+            --text-inv: #FFFFFF;
+
+            /* CTA Actions */
+            --cta-blue: #1E40AF;
+            /* Executive Blue */
+            --cta-green: #15803D;
+            /* Success/WhatsApp */
+
+            /* Dimensions */
+            --container-width: 900px;
+            /* Wider, document style */
+            --radius-soft: 4px;
+            /* Sharp, minimal rounding */
+
+            /* Typography */
+            --font-main: 'Inter', sans-serif;
+        }
+
+        /* --- BASE RESET --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-pri);
+            background-color: var(--inst-bg);
+            line-height: 1.6;
+            padding-bottom: 90px;
+            /* Space for Sticky Bar */
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--inst-navy);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.2s;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* --- COMPONENT: EXECUTIVE PANEL --- */
+        .exec-panel {
+            background: var(--inst-white);
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        /* --- BUTTONS (SHARP, RECTANGULAR) --- */
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px 24px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: var(--radius-soft);
+            gap: 10px;
+            cursor: pointer;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--cta-blue);
+            color: white;
+        }
+
+        .btn-whatsapp {
+            background: var(--cta-green);
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--inst-white);
+            color: white;
+        }
+
+        /* --- HEADER --- */
+        .header-bar {
+            background: var(--inst-white);
+            border-bottom: 1px solid #E2E8F0;
+            padding: 20px 0;
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .brand {
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: var(--inst-navy);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-meta {
+            font-size: 0.85rem;
+            color: var(--text-sec);
+            font-weight: 500;
+        }
+
+        /* --- HERO (INSTITUTIONAL DARK) --- */
+        .hero-section {
+            background: var(--inst-navy);
+            color: var(--text-inv);
+            padding: 80px 24px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: var(--inst-gold);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--inst-gold);
+            padding-bottom: 4px;
+        }
+
+        .hero-title {
+            font-size: 2.4rem;
+            line-height: 1.2;
+            color: var(--text-inv);
+            margin-bottom: 24px;
+            max-width: 700px;
+        }
+
+        .hero-sub {
+            font-size: 1.05rem;
+            color: #CBD5E1;
+            max-width: 600px;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .hero-data-row {
+            display: flex;
+            gap: 40px;
+            border-top: 1px solid #334155;
+            padding-top: 30px;
+            margin-bottom: 40px;
+        }
+
+        .data-point span {
+            display: block;
+        }
+
+        .dp-val {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--inst-gold);
+            margin-bottom: 4px;
+        }
+
+        .dp-lbl {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #94A3B8;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 16px;
+        }
+
+        /* --- SUMMARY (EXECUTIVE PANEL) --- */
+        .summary-section {
+            margin-top: -30px;
+            /* Overlap effect */
+            padding: 0 24px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: #E2E8F0;
+            /* Divider color */
+            border: 1px solid #E2E8F0;
+        }
+
+        .summary-cell {
+            background: var(--inst-white);
+            padding: 24px;
+            text-align: center;
+        }
+
+        .sc-val {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--inst-navy);
+            display: block;
+        }
+
+        .sc-lbl {
+            font-size: 0.75rem;
+            color: var(--text-sec);
+            text-transform: uppercase;
+            margin-top: 6px;
+            display: block;
+        }
+
+        /* --- THESIS (PILLARS) --- */
+        .thesis-section {
+            padding: 60px 24px;
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+            border-left: 4px solid var(--inst-gold);
+            padding-left: 20px;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-sec);
+            font-size: 1rem;
+        }
+
+        .pillar-grid {
+            display: grid;
+            gap: 30px;
+        }
+
+        .pillar-card {
+            background: white;
+            padding: 30px;
+            border: 1px solid #E2E8F0;
+            border-top: 4px solid var(--inst-navy);
+        }
+
+        .pillar-head {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .pillar-icon {
+            color: var(--inst-gold);
+            font-size: 1.2rem;
+        }
+
+        .pillar-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .pillar-body {
+            font-size: 0.95rem;
+            color: var(--text-sec);
+        }
+
+        /* --- INFRASTRUCTURE (CHECKLIST) --- */
+        .infra-section {
+            background: var(--inst-white);
+            padding: 60px 24px;
+            border-top: 1px solid #E2E8F0;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .infra-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .infra-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 45%;
+            padding: 16px;
+            background: var(--inst-bg);
+            border-radius: var(--radius-soft);
+        }
+
+        .infra-check {
+            color: var(--inst-green);
+            font-size: 1rem;
+        }
+
+        .infra-text {
+            font-weight: 600;
+            color: var(--inst-navy);
+            font-size: 0.9rem;
+        }
+
+        /* --- LOCATION (INTELLIGENCE) --- */
+        .location-section {
+            padding: 60px 24px;
+        }
+
+        .intel-box {
+            background: white;
+            border: 1px solid #CBD5E1;
+            padding: 24px;
+        }
+
+        .intel-row {
+            margin-bottom: 24px;
+            border-bottom: 1px solid #E2E8F0;
+            padding-bottom: 24px;
+        }
+
+        .intel-row:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .intel-head {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--inst-navy);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .intel-desc {
+            font-size: 0.95rem;
+            color: var(--text-sec);
+        }
+
+        /* --- DEVELOPER (DARK FOOTER BLOCK) --- */
+        .dev-section {
+            background: var(--inst-steel);
+            color: white;
+            padding: 60px 24px;
+            text-align: center;
+        }
+
+        .dev-brand {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            color: var(--inst-gold);
+            text-transform: uppercase;
+        }
+
+        .trust-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            font-size: 0.85rem;
+            color: #CBD5E1;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- STICKY FOOTER --- */
+        .sticky-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--inst-white);
+            border-top: 1px solid #CBD5E1;
+            padding: 16px 24px;
+            display: flex;
+            gap: 16px;
+            z-index: 1000;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .bar-btn {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            border-radius: var(--radius-soft);
+            gap: 8px;
+        }
+
+        .bar-call {
+            background: var(--cta-blue);
+            color: white;
+        }
+
+        .bar-brochure {
+            background: white;
+            border: 1px solid var(--inst-navy);
+            color: var(--inst-navy);
+        }
+
+        /* --- MEDIA QUERIES --- */
+        @media (min-width: 768px) {
+            .pillar-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .hero-data-row {
+                justify-content: flex-start;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .container {
+                padding: 0 40px;
+            }
+
+            .summary-section {
+                padding: 0 40px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero-data-row {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .summary-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+            }
+
+            .trust-grid {
+                gap: 20px;
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <!-- Background Elements -->
-    <div class="ambient-glow glow-1"></div>
-    <div class="ambient-glow glow-2"></div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo">
-                <div class="logo-icon">
-                    <i class="fa-solid fa-layer-group"></i>
-                </div>
-                <span>Elevate</span>
-            </a>
-            <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#how-it-works">How it Works</a>
-                <a href="#testimonials">Stories</a>
-                <a href="#pricing">Pricing</a>
-            </div>
-            <div class="nav-actions">
-                <a href="#" class="btn btn-secondary">Log In</a>
-                <a href="#" class="btn btn-primary glow-effect">Get Started</a>
-            </div>
-            <div class="mobile-menu-btn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="container hero-container">
-            <div class="hero-content">
-                <div class="badge-pill">
-                    <span class="badge-dot"></span>
-                    <span>v2.0 is now live</span>
-                </div>
-                <h1 class="hero-title">
-                    Scale your Business with <span class="text-gradient">Intelligent</span> Insights.
-                </h1>
-                <p class="hero-description">
-                    Unlock the power of predictive analytics. Elevate transforms raw data into actionable growth strategies in real-time.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary btn-lg glow-effect">
-                        Start Free Trial <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                    <a href="#" class="btn btn-outline btn-lg">
-                        <i class="fa-solid fa-play"></i> Watch Demo
-                    </a>
-                </div>
-                <div class="trust-badge">
-                    <div class="avatars">
-                        <img src="https://i.pravatar.cc/100?img=1" alt="User">
-                        <img src="https://i.pravatar.cc/100?img=2" alt="User">
-                        <img src="https://i.pravatar.cc/100?img=3" alt="User">
-                    </div>
-                    <span>Trusted by 10,000+ forward thinkers</span>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="glass-card main-card">
-                    <div class="card-header">
-                        <div class="header-dots">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
-                        </div>
-                        <div class="header-title">Growth_Analytics.js</div>
-                    </div>
-                    <div class="chart-area">
-                        <!-- CSS/SVG Chart Representation -->
-                        <svg viewBox="0 0 300 150" class="chart-svg">
-                            <path d="M0,150 L30,120 L70,130 L110,90 L150,110 L200,60 L250,80 L300,20 V150 Z" fill="url(#gradient)" opacity="0.4"></path>
-                            <path d="M0,150 L30,120 L70,130 L110,90 L150,110 L200,60 L250,80 L300,20" fill="none" stroke="#8b5cf6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
-                            <defs>
-                                <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                    </div>
-                    <div class="stat-row">
-                        <div class="stat-item">
-                            <span class="label">Revenue</span>
-                            <span class="value">+124%</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="label">Users</span>
-                            <span class="value">84.2k</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="glass-card float-card-1">
-                    <i class="fa-solid fa-bolt icon"></i>
-                    <div>
-                        <span class="bold">Instant</span>
-                        <span class="sub">Deployment</span>
-                    </div>
-                </div>
-                <div class="glass-card float-card-2">
-                    <i class="fa-solid fa-shield-halved icon"></i>
-                    <div>
-                        <span class="bold">Secure</span>
-                        <span class="sub">Encryption</span>
-                    </div>
-                </div>
-            </div>
+    <!-- Header -->
+    <header class="header-bar">
+        <div class="container header-flex">
+            <div class="brand">Emaam Constructions</div>
+            <div class="contact-meta">Ref: PF-INV-2025</div>
         </div>
     </header>
 
-    <!-- Logo Cloud -->
-    <section class="logo-cloud">
+    <!-- Hero Section -->
+    <section class="hero-section">
         <div class="container">
-            <p>Powering next-gen companies</p>
-            <div class="logos">
-                <i class="fa-brands fa-stripe fa-2x"></i>
-                <i class="fa-brands fa-aws fa-2x"></i>
-                <i class="fa-brands fa-google fa-2x"></i>
-                <i class="fa-brands fa-meta fa-2x"></i>
-                <i class="fa-brands fa-spotify fa-2x"></i>
+            <span class="hero-label">Investment Opportunity</span>
+            <h1 class="hero-title">Institutional-Grade Land Investment in Telangana’s Growth Corridor</h1>
+            <p class="hero-sub">Clear-title farm land in Kodangal positioned for capital preservation and multi-year
+                appreciation.</p>
+
+            <div class="hero-data-row">
+                <div class="data-point">
+                    <span class="dp-val">₹3,150</span>
+                    <span class="dp-lbl">Per Square Yard</span>
+                </div>
+                <div class="data-point">
+                    <span class="dp-val">₹15,000</span>
+                    <span class="dp-lbl">Monthly Allocation</span>
+                </div>
+                <div class="data-point">
+                    <span class="dp-val">Plan A</span>
+                    <span class="dp-lbl">Emerging Asset Class</span>
+                </div>
+            </div>
+
+            <div class="hero-cta-group">
+                <a href="tel:+918886668702" class="btn btn-primary">Speak to Investment Advisor</a>
+                <a href="https://wa.me/918886668702?text=Requesting%20Investment%20Brochure"
+                    class="btn btn-outline">Request Brochure</a>
             </div>
         </div>
     </section>
 
-    <!-- Feature Grid -->
-    <section id="features" class="features">
+    <!-- Executive Summary Panel -->
+    <div class="container summary-section">
+        <div class="summary-grid">
+            <div class="summary-cell">
+                <span class="sc-val">24 Months</span>
+                <span class="sc-lbl">Structured Tenure</span>
+            </div>
+            <div class="summary-cell">
+                <span class="sc-val">100%</span>
+                <span class="sc-lbl">Clear Title</span>
+            </div>
+            <div class="summary-cell">
+                <span class="sc-val">Spot Reg.</span>
+                <span class="sc-lbl">Immediate Ownership</span>
+            </div>
+            <div class="summary-cell">
+                <span class="sc-val">Asset</span>
+                <span class="sc-lbl">Agricultural Parcel</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Investment Thesis -->
+    <section class="thesis-section">
         <div class="container">
             <div class="section-header">
-                <h2>Built for <span class="text-gradient">Performance</span></h2>
-                <p>Everything you need to analyze, optimize, and scale your operations.</p>
+                <h2>Investment Rationale</h2>
+                <p>Strategic fundamentals driving long-term asset value.</p>
             </div>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="icon-box">
-                        <i class="fa-solid fa-chart-line"></i>
+
+            <div class="pillar-grid">
+                <div class="pillar-card">
+                    <div class="pillar-head">
+                        <i class="fas fa-chart-line pillar-icon"></i>
+                        <span class="pillar-title">Capital Growth</span>
                     </div>
-                    <h3>Real-time Analytics</h3>
-                    <p>Track metrics as they happen with our ultra-low latency data pipelines.</p>
+                    <p class="pillar-body">Located within the Kodangal growth corridor, benefiting from regional
+                        infrastructure development relative to current entry valuation.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="icon-box">
-                        <i class="fa-solid fa-microchip"></i>
+                <div class="pillar-card">
+                    <div class="pillar-head">
+                        <i class="fas fa-shield-alt pillar-icon"></i>
+                        <span class="pillar-title">Asset Security</span>
                     </div>
-                    <h3>AI Forecasting</h3>
-                    <p>Predict future trends with our proprietary machine learning models.</p>
+                    <p class="pillar-body">Verified clear title with immediate registration capability. A tangible,
+                        low-risk asset class for portfolio diversification.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="icon-box">
-                        <i class="fa-solid fa-users-viewfinder"></i>
+                <div class="pillar-card">
+                    <div class="pillar-head">
+                        <i class="fas fa-landmark pillar-icon"></i>
+                        <span class="pillar-title">Strategic Utility</span>
                     </div>
-                    <h3>Audience Insights</h3>
-                    <p>Understand your user base with deep segmentation and behavioral analysis.</p>
+                    <p class="pillar-body">Dual-purpose utility suitable for immediate agricultural use or long-term
+                        land banking strategies.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+    <!-- Infrastructure Specifications -->
+    <section class="infra-section">
         <div class="container">
-            <div class="cta-box">
-                <h2>Ready to transform your workflow?</h2>
-                <p>Join 10,000+ teams who have already leveled up.</p>
-                <form class="cta-form">
-                    <input type="email" placeholder="Enter your work email">
-                    <button type="submit" class="btn btn-primary glow-effect">Get Started Free</button>
-                </form>
-                <div class="benefits">
-                    <span><i class="fa-solid fa-check"></i> No credit card required</span>
-                    <span><i class="fa-solid fa-check"></i> 14-day free trial</span>
+            <div class="section-header" style="border-left-color: var(--inst-navy);">
+                <h2>Asset Specifications</h2>
+                <p>Delivered infrastructure included in acquisition basis.</p>
+            </div>
+            <div class="infra-flex">
+                <div class="infra-item">
+                    <i class="fas fa-check-circle infra-check"></i>
+                    <span class="infra-text">Grand Entrance Archway</span>
+                </div>
+                <div class="infra-item">
+                    <i class="fas fa-check-circle infra-check"></i>
+                    <span class="infra-text">Internal Access Roads</span>
+                </div>
+                <div class="infra-item">
+                    <i class="fas fa-check-circle infra-check"></i>
+                    <span class="infra-text">Electricity Connection</span>
+                </div>
+                <div class="infra-item">
+                    <i class="fas fa-check-circle infra-check"></i>
+                    <span class="infra-text">Water Resources</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container footer-container">
-            <div class="footer-brand">
-                <div class="logo">
-                     <i class="fa-solid fa-layer-group"></i> Elevate
-                </div>
-                <p>&copy; 2025 Elevate Inc.</p>
+    <!-- Location Intelligence -->
+    <section class="location-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Location Intelligence</h2>
+                <p>Kodangal: An emerging hub within the Telangana development roadmap.</p>
             </div>
-            <div class="footer-links">
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
-                <a href="#">Twitter</a>
-                <a href="#">GitHub</a>
+            <div class="intel-box">
+                <div class="intel-row">
+                    <div class="intel-head">Regional Connectivity</div>
+                    <div class="intel-desc">Strategically positioned near major state highways, ensuring logistical
+                        efficiency and accessibility to Hyderabad.</div>
+                </div>
+                <div class="intel-row">
+                    <div class="intel-head">Growth Trajectory</div>
+                    <div class="intel-desc">The region is receiving allocation for infrastructure upgrades, projecting a
+                        positive correlation with future land values.</div>
+                </div>
+                <div class="intel-row">
+                    <div class="intel-head">Zoning & Usage</div>
+                    <div class="intel-desc">Agricultural zoning permits flexible usage patterns, from cultivation to
+                        farmhouse development.</div>
+                </div>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- Developer Assurance -->
+    <section class="dev-section">
+        <div class="container">
+            <div class="dev-brand">Emaam Constructions</div>
+            <p style="opacity: 0.8; margin-bottom: 30px;">Committed to Transparency & Value Delivery</p>
+            <div class="trust-grid">
+                <div class="trust-item">Transparent Dealings</div>
+                <div class="trust-item">Verified Documentation</div>
+                <div class="trust-item">On-Time Execution</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky Footer (Investment Action) -->
+    <div class="sticky-bar">
+        <a href="tel:+918886668702" class="bar-btn bar-call">
+            <i class="fas fa-phone-alt"></i> Speak to Advisor
+        </a>
+        <a href="https://wa.me/918886668702?text=Requesting%20Investment%20Brochure" class="bar-btn bar-brochure">
+            <i class="fab fa-whatsapp"></i> Brochure
+        </a>
+    </div>
+
 </body>
+
 </html>
